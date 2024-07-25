@@ -1,0 +1,225 @@
+
+<%- include('partials/header')%>
+
+<!-- GLOBAL-LOADER -->
+<div id="global-loader" style="display: none;"> <img src="/assets/images/loader.svg" class="loader-img"
+alt="Loader">
+</div>
+<!-- /GLOBAL-LOADER -->
+<!-- PAGE -->
+<div class="page">
+<div class="page-main">
+<!--APP-SIDEBAR-->
+<div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+<aside class="app-sidebar ps ps--active-y">
+<div class="side-header active"> <a class="header-brand1" href="/adminRoute">
+</div>
+<ul class="side-menu">
+<li>
+  <h3>Main</h3>
+</li>
+<li>
+  <a class="side-menu__item active" data-bs-toggle="slide" href="/adminRoute">
+    <i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Dashboard</span>
+  </a>
+</li>
+      <li>
+  <h3>Business</h3>
+</li>
+            <li>
+  <a class="side-menu__item " href="/allFunding">
+    <i class="side-menu__icon bi bi-coin"></i><span class="side-menu__label">all Deposit</span>
+  </a>
+</li>
+<li>
+  <a class="side-menu__item " href="/allwithdrawal">
+    <i class="side-menu__icon bi bi-arrow-left-right"></i><span class="side-menu__label">all widthdrawals</span>
+  </a>
+</li>
+
+<li>
+  <a class="side-menu__item " href="/allwallets">
+    <i class="side-menu__icon bi bi-wallet2"></i><span class="side-menu__label">All wallets </span>
+  </a>
+</li>
+
+<li>
+  <a class="side-menu__item " href="/logout">
+    <i class="side-menu__icon bi bi-exclamation-circle"></i><span class="side-menu__label">sign out</span>
+  </a>
+</li>
+    </ul>
+<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+</div>
+<div class="ps__rail-y" style="top: 0px; height: 463px; right: 0px;">
+<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 191px;"></div>
+</div>
+</aside>
+<!--/APP-SIDEBAR-->
+<!-- Mobile Header -->
+<div class="app-header header">
+  <div class="container-fluid">
+    <div class="d-flex"> <a aria-label="Hide Sidebar" class="app-sidebar__toggle"
+        data-bs-toggle="sidebar" ><i class="bi bi-list"></i></a>
+       <a class="header-brand1 d-flex d-md-none" href="#"> 
+        <img
+          src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img desktop-logo"
+          alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+          class="header-brand-img toggle-logo" alt="logo"> <img
+          src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img light-logo"
+          alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+          class="header-brand-img light-logo1" alt="logo"> </a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-md-none bg-white">
+<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+  <div class="d-flex order-lg-2 ms-auto">
+  
+  
+    <div class="dropdown d-md-flex profile-1">
+      <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+          <img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+            class="avatar  profile-user brround cover-image"> </span>
+      </a>
+      
+    </div>
+    <!-- SIDE-MENU -->
+  </div>
+</div>
+</div> <!-- /Mobile Header -->
+<!--app-content open-->
+<div class="app-content">
+<div class="side-app">
+
+  <div class="col py-3" style="background-color: black;">
+
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><%= user.fullname %></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col text-end fw-lighter">
+        <b>Last Updated</b>
+        <b >UserId:</b><%=user._id%>
+      </div>
+    </div>
+  
+  </div>
+  
+  <ul class="list-group" style="background-color: black;">
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Name:</b></div>
+        <div class="col" style="color: black;"><%= user.fullname %> </div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Tel:</b></div>
+        <div class="col" style="color: black;"><%= user.tel %></div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Email:</b></div>
+        <div class="col" style="color: black;"><%= user.email %></div>
+      </div>
+    </li>
+       
+     <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Country:</b></div>
+        <div class="col" style="color: black; display: flex; flex-wrap: wrap;"><%= user.country %></div>
+      </div>
+    </li>
+    
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Widthdraw ID:</b></div>
+        <div class="col" style="color: black; display: flex; flex-wrap: wrap;"><%= user.widthdraws %></div>
+      </div>
+    </li>
+    
+
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Deposits ID:</b></div>
+        <div class="col" style="color: black;"><%= user.deposits %></div>
+      </div>
+    </li>
+ 
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Wallets ID:</b></div>
+        <div class="col" style="color: black;"><%= user.wallets %></div>
+      </div>
+    </li>
+
+     <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Password:</b></div>
+        <div class="col" style="color: black;"><%= user.password%> </div>
+      </div>
+    </li>
+
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Deposit Balance:</b></div>
+        <div class="col" style="color: black;"><%=user.balance%> </div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Widthdraw Balance:</b></div>
+        <div class="col" style="color: black;"><%= user.widthdrawBalance%> </div>
+      </div>
+    </li>
+
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Available Balance:</b></div>
+        <div class="col" style="color: black;"><%=user.available%> </div>
+      </div>
+    </li>
+
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Bonus:</b></div>
+        <div class="col" style="color: black;"><%= user.bonus%> </div>
+      </div>
+    </li>
+
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Date Created:</b></div>
+        <div class="col" style="color: black;"><%= user.createdAt%> </div>
+      </div>
+    </li>
+  
+    <li class="list-group-item"> 
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b style="color: black;">Date Modified:</b></div>
+        <div class="col" style="color: black;"><%= user.updatedAt%> </div>
+      </div>
+    </li>
+  
+  </ul>
+
+
+</div>
+</div>
+</div>
+</div> 
+
+<%- include('partials/dashboardFooter')%>

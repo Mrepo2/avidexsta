@@ -1,0 +1,393 @@
+<%- include('partials/dashboardHeader')%>
+
+  
+  <!-- GLOBAL-LOADER -->
+  <div id="global-loader" style="display: none;"> <img src="https://app.avidexstandard.com/assets/images/loader.svg" class="loader-img" alt="Loader">
+  </div>
+  <!-- /GLOBAL-LOADER -->
+  <!-- PAGE -->
+  <div class="page">
+    <div class="page-main">
+      <!--APP-SIDEBAR-->
+        <!--APP-SIDEBAR-->
+      <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+      <aside class="app-sidebar ps ps--active-y">
+        <div class="side-header active"> <a class="header-brand1" href="#">
+        </div>
+        <ul class="side-menu">
+            <li>
+                <h3>Main</h3>
+            </li>
+            <li>
+                <a class="side-menu__item active" data-bs-toggle="slide" href="/dashboard">
+                    <i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Home</span>
+                </a>
+            </li>
+                        <li>
+                <h3>Business</h3>
+            </li>
+                                    <li>
+                <a class="side-menu__item " href="/deposit">
+                    <i class="side-menu__icon bi bi-coin"></i><span class="side-menu__label">Deposit</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/withdrawal">
+                    <i class="side-menu__icon bi bi-cash"></i><span class="side-menu__label">Withdrawal</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/subscription">
+                    <i class="side-menu__icon bi bi-briefcase"></i><span class="side-menu__label">Subscription</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/connect-social-media">
+                    <i class="side-menu__icon bi bi-envelope"></i><span class="side-menu__label">Connect Social Media</span>
+                </a>
+            </li>             
+            <li>
+                <a class="side-menu__item " href="/connect-wallets">
+                    <i class="side-menu__icon bi bi-wallet"></i><span class="side-menu__label">Connect Wallets</span>
+                </a>
+            </li> 
+            
+          
+            <li>
+                <a class="side-menu__item " href="/buy-links">
+                    <i class="side-menu__icon bi bi-cart4"></i><span class="side-menu__label">Buy Coin</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/auto-trade">
+                    <i class="side-menu__icon bi bi-gear"></i><span class="side-menu__label">Auto Trade</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/referral">
+                    <i class="side-menu__icon bi bi-people"></i><span class="side-menu__label">Referral</span>
+                </a>
+            </li>
+                    </ul>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; height: 463px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 191px;"></div>
+        </div>
+      </aside>
+<!--/APP-SIDEBAR-->
+      <!--/APP-SIDEBAR-->
+      <!-- Mobile Header -->
+      <div class="app-header header">
+        <div class="container-fluid">
+          <div class="d-flex"> 
+          <!--<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar"-->
+          <!--    href="#"></a>-->
+          <div class="d-flex">
+              <img class="img img-fluid" src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" width="50px" />
+<!--              <div id="google_translate_element"></div>-->
+
+<!--<script type="text/javascript">-->
+<!--function googleTranslateElementInit() {-->
+<!--  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');-->
+<!--}-->
+<!--</script>-->
+
+<!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+          </div>
+          <div class="d-flex flex-column p-2" >
+              <span>Welcome,</span>
+              <span style="font-weight:bold"> <%=user.fullname%></span>
+          </div>
+            <div class="d-flex order-lg-2 ms-auto header-right-icons">
+                                                <div class="dropdown d-md-flex notifications">
+                    <a class="nav-link icon" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                                            </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+                        <div class="drop-heading border-bottom">
+                            <div class="d-flex"></div>
+                        </div>
+                        <div class="notifications-menu">
+                                                           <a class="dropdown-item d-flex" href="#chat">
+                                    <div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
+                                    </div>
+                                    <div class="mt-1">
+                                        <h5 class="notification-label mb-1">No Notification</h5>
+                                    </div>
+                                </a>
+                            
+                    </div>
+                        <div class="dropdown-divider m-0"></div> <a href="/notification-messages" class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+                    </div>
+                </div> <!-- NOTIFICATIONS -->
+                <div class="dropdown d-md-flex profile-1">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+                        <img src="https://app.avidexstandard.com/storage/profile/avatar.png" class="avatar  profile-user brround cover-image"> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(-148px, 56px, 0px); max-height: 500px; overflow-y: auto;">
+                        <div class="drop-heading">
+                        <div class="text-center">
+                            <h5 class="text-dark mb-0"><%=user.fullname%></h5>
+                        </div>
+                        </div>
+                        <div class="dropdown-divider m-0"></div>
+                        <a class="dropdown-item" href="/dashboard"> <i class="dropdown-icon bi bi-house"></i> Home </a>
+                        <a class="dropdown-item" href="/account"> <i class="dropdown-icon  bi bi-coin"></i> Profile </a>
+                        <a class="dropdown-item" href="/deposit"> <i class="dropdown-icon bi bi-coin"></i> Deposit </a>
+                        <a class="dropdown-item" href="/withdrawal"> <i class="dropdown-icon bi bi-cash"></i> Withdraw </a>
+                        <a class="dropdown-item" href="/subscription"> <i class="dropdown-icon bi bi-briefcase"></i> Upgrade</a>
+                        <a class="dropdown-item" href="/connect-social-media"> <i class="dropdown-icon bi bi-envelope"></i> Connect Social Media </a>
+                        <a class="dropdown-item" href="/connect-wallets"> <i class="dropdown-icon  bi bi-wallet"></i> Connect Wallets </a>
+                        <a class="dropdown-item" href="/buy-links"> <i class="dropdown-icon bi bi-cart4"></i> Buy Coin </a>
+                        <a class="dropdown-item" href="/auto-trade"> <i class="dropdown-icon bi bi-gear"></i> Auto Trade </a>
+                        <a class="dropdown-item" href="/referral"> <i class="dropdown-icon bi bi-people"></i> Referral </a>
+                     
+                                                
+                        <a class="dropdown-item logout-btn" href="/logout"> <i class="dropdown-icon bi bi-exclamation-circle"></i> Sign out </a>
+                    </div>
+                </div><!-- SIDE-MENU -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-md-none bg-white">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+          <div class="d-flex order-lg-2 ms-auto">
+            <div class="dropdown d-sm-flex"> <a href="#" class="nav-link icon" data-bs-toggle="dropdown"> <i
+                  class="fe fe-search"></i> </a>
+              <div class="dropdown-menu header-search dropdown-menu-start">
+                <div class="input-group w-100 p-2"> <input type="text" class="form-control" placeholder="Search....">
+                  <div class="input-group-text btn btn-primary"> <i class="fa fa-search" aria-hidden="true"></i> </div>
+                </div>
+              </div>
+            </div> <!-- SEARCH -->
+            <div class="dropdown d-md-flex"> <a class="nav-link icon theme-layout nav-link-bg layout-setting"> <span
+                  class="dark-layout" data-bs-placement="bottom" data-bs-toggle="tooltip" title=""
+                  data-bs-original-title="Dark Theme" aria-label="Dark Theme"><i class="fe fe-moon"></i></span> <span
+                  class="light-layout" data-bs-placement="bottom" data-bs-toggle="tooltip" title=""
+                  data-bs-original-title="Light Theme" aria-label="Light Theme"><i class="fe fe-sun"></i></span> </a>
+            </div> <!-- Theme-Layout -->
+            <div class="dropdown d-md-flex"> <a class="nav-link icon full-screen-link nav-link-bg"> <i
+                  class="fe fe-minimize fullscreen-button"></i> </a> </div> <!-- FULL-SCREEN -->
+            <div class="dropdown  d-md-flex notifications"> <a class="nav-link icon" data-bs-toggle="dropdown">
+                <i class="bi bi-bell"></i>
+                                    </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <div class="drop-heading border-bottom">
+                  <div class="d-flex"></div>
+                </div>
+                <div class="notifications-menu">
+                                            <a class="dropdown-item d-flex" href="#chat">
+                            <div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
+                            </div>
+                            <div class="mt-1">
+                                <h5 class="notification-label mb-1">No Notification</h5>
+                            </div>
+                        </a>
+                                    </div>
+                <div class="dropdown-divider m-0"></div> <a href="#"
+                  class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+              </div>
+            </div> <!-- NOTIFICATIONS -->
+            <div class="dropdown d-md-flex profile-1"> <a href="#" data-bs-toggle="dropdown"
+                class="nav-link pe-2 leading-none d-flex"> <span> <img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+                     class="avatar  profile-user brround cover-image"> </span> </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <div class="dropdown-divider m-0"></div> <a class="dropdown-item" href="#"> <i class="dropdown-icon fe fe-user"></i> Profile </a>
+                <a class="dropdown-item" href="#login"> <i class="dropdown-icon fe fe-alert-circle"></i> Sign out </a>
+              </div>
+            </div>
+            <div class="dropdown d-md-flex header-settings"> <a href="#" class="nav-link icon "
+                data-bs-toggle="sidebar-right" data-target=".sidebar-right"> <i class="fe fe-menu"></i> </a> </div>
+            <!-- SIDE-MENU -->
+          </div>
+        </div>
+      </div> <!-- /Mobile Header -->
+      <!--app-content open-->
+        <div class="app-content">
+    <div class="side-app">
+        <div class="row mt-3">
+            <div class="col-12 col-sm-12">
+                <div class="card ">
+                
+                <div class="card-body">
+                    <div class="row my-5">
+                        <div class="col-md-12">
+                            
+                            <div class="row">
+                                <div class="form-row">
+                                <h4 class="">Referral Link Details</h4>
+                                <div class="col-md-12">
+                                    <label for="basic-url" class="form-label">Your vanity URL</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Referral Link" value="/<%=user.fullname%>">
+                                        <button class="input-group-text" id="copy-ref-link-btn">Copy</button>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <hr class="border-5">
+                        </div>
+                        <div class="col-md-12 mt-5">
+                            <div class="table-responsive">
+                                <div id="data-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                    <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="data-table" class="table row-border text-nowrap mb-0 dataTable no-footer" role="grid" aria-describedby="data-table_info">
+                                        <thead class="border-top">
+                                            <tr role="row">
+                                            <th class="bg-transparent border-bottom-0 sorting" tabindex="0"
+                                                aria-controls="data-table" rowspan="1" colspan="1"
+                                                aria-label="Name: activate to sort column ascending" style="width: 322.125px;">Name
+                                            </th>
+                                            <th class="bg-transparent border-bottom-0 sorting" tabindex="0"
+                                                aria-controls="data-table" rowspan="1" colspan="1"
+                                                aria-label="Action: activate to sort column ascending" style="width: 153.025px;">
+                                                Registration Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                                            <tr>
+                                                    <td colspan="6" class="text-center">No data found</td>
+                                                </tr>
+                                                                                    </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                </div>
+            </div> <!-- COL END -->
+        </div>
+    </div>
+</div>
+      <!-- CONTAINER END -->
+    </div> <!-- Sidebar-right -->
+    <!-- FOOTER -->
+        <div style="margin-bottom:60px"></div>
+        <div class="footer fixed-bottom p-0 fs-1" style="margin-top:60px">
+            <nav class="navbar navbar-light bg-light">
+                <form class="container-fluid">
+                    <div class="" type="button"><a href="/dashboard" class="mobile-menu mobile-menu"><i class="bi bi-house"></a></i></div>
+                    <!--<div class="float-right" type="button"><a href="https://app.avidexstandard.com/account" class="mobile-menu "><i class="fad fa-money-bill"></i></a></div>-->
+                    <div class="float-left" type="button"><a href="/menu" class="mobile-menu"><i class="bi bi-list"></i></a></div>
+                </form>
+            </nav>
+        </div>
+    <!-- FOOTER MENU -->
+   
+  </div>
+  
+    
+
+
+<!-- Start Notification ============= -->
+    
+    <div class="mgm" style="display: none;">
+<div class="txt" style="color:black;">Someone from <b></b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);"></a></div>
+</div>
+
+<style>
+.mgm {
+    border-radius: 7px;
+    position: fixed;
+    z-index: 90;
+    bottom: 80px;
+    right: 50px;
+    background: #fff;
+    padding: 10px 27px;
+    box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+}
+.mgm a {
+    font-weight: 700;
+    display: block;
+    color:#f2d516;
+}
+.mgm a, .mgm a:active {
+    transition: all .2s ease;
+    color:#f2d516;
+}
+</style>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.html"></script><script type="text/javascript">
+var listCountries = ['South Africa', 'USA', 'Germany', 'France', 'Italy', 'South Africa', 'Australia', 'South Africa', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'South Africa', 'South Africa', 'Venezuela', 'South Africa', 'Sweden', 'South Africa', 'South Africa', 'Italy', 'South Africa', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'South Africa', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
+    var listPlans = ['$500','$1500','$1000','$10,000','$2000','$3000','$4000', '$600', '$700', '$2500'];
+    interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+    var run = setInterval(request, interval);
+
+    function request() {
+        clearInterval(run);
+        interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+        var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+        var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+        var msg = 'Someone from <b>' + country + '</b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
+        $(".mgm .txt").html(msg);
+        $(".mgm").stop(true).fadeIn(300);
+        window.setTimeout(function() {
+            $(".mgm").stop(true).fadeOut(300);
+        }, 6000);
+        run = setInterval(request, interval);
+    }
+</script>
+    <!-- End Notification ============= -->
+
+<!-- Start Notification ============= -->
+    
+    <div class="mgm" style="display: none;">
+<div class="txt" style="color:black;">Someone from <b></b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);"></a></div>
+</div>
+
+<style>
+.mgm {
+    border-radius: 7px;
+    position: fixed;
+    z-index: 90;
+    bottom: 80px;
+    right: 50px;
+    background: #fff;
+    padding: 10px 27px;
+    box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+}
+.mgm a {
+    font-weight: 700;
+    display: block;
+    color:#f2d516;
+}
+.mgm a, .mgm a:active {
+    transition: all .2s ease;
+    color:#f2d516;
+}
+</style>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.html"></script><script type="text/javascript">
+var listCountries = ['South Africa', 'USA', 'Germany', 'France', 'Italy', 'South Africa', 'Australia', 'South Africa', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'South Africa', 'South Africa', 'Venezuela', 'South Africa', 'Sweden', 'South Africa', 'South Africa', 'Italy', 'South Africa', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'South Africa', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
+    var listPlans = ['$500','$1500','$1000','$10,000','$2000','$3000','$4000', '$600', '$700', '$2500'];
+    interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+    var run = setInterval(request, interval);
+
+    function request() {
+        clearInterval(run);
+        interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+        var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+        var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+        var msg = 'Someone from <b>' + country + '</b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
+        $(".mgm .txt").html(msg);
+        $(".mgm").stop(true).fadeIn(300);
+        window.setTimeout(function() {
+            $(".mgm").stop(true).fadeOut(300);
+        }, 6000);
+        run = setInterval(request, interval);
+    }
+</script>
+    <!-- End Notification ============= -->
+    
+
+
+
+<%- include('partials/dashboardFooter')%>

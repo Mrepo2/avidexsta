@@ -1,0 +1,161 @@
+
+<%- include('partials/header')%>
+
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
+  </script>
+
+
+<!-- GLOBAL-LOADER -->
+<div id="global-loader" style="display: none;"> <img src="/assets/images/loader.svg" class="loader-img"
+alt="Loader">
+</div>
+<!-- /GLOBAL-LOADER -->
+<!-- PAGE -->
+<div class="page">
+<div class="page-main">
+<!--APP-SIDEBAR-->
+<div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+<aside class="app-sidebar ps ps--active-y">
+<div class="side-header active"> <a class="header-brand1" href="/adminRoute">
+</div>
+<ul class="side-menu">
+<li>
+  <h3>Main</h3>
+</li>
+<li>
+  <a class="side-menu__item active" data-bs-toggle="slide" href="/adminRoute">
+    <i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Dashboard</span>
+  </a>
+</li>
+      <li>
+  <h3>Business</h3>
+</li>
+            <li>
+  <a class="side-menu__item " href="/allFunding">
+    <i class="side-menu__icon bi bi-coin"></i><span class="side-menu__label">all Deposit</span>
+  </a>
+</li>
+<li>
+  <a class="side-menu__item " href="/allWidthdrawals">
+    <i class="side-menu__icon bi bi-arrow-left-right"></i><span class="side-menu__label">all widthdrawals</span>
+  </a>
+</li>
+
+<li>
+  <a class="side-menu__item " href="/allwallets">
+    <i class="side-menu__icon bi bi-wallet2"></i><span class="side-menu__label">All wallets </span>
+  </a>
+</li>
+
+<li>
+  <a class="side-menu__item " href="/logout">
+    <i class="side-menu__icon bi bi-exclamation-circle"></i><span class="side-menu__label">sign out</span>
+  </a>
+</li>
+    </ul>
+<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+</div>
+<div class="ps__rail-y" style="top: 0px; height: 463px; right: 0px;">
+<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 191px;"></div>
+</div>
+</aside>
+<!--/APP-SIDEBAR-->
+<!-- Mobile Header -->
+<div class="app-header header">
+  <div class="container-fluid">
+    <div class="d-flex"> <a aria-label="Hide Sidebar" class="app-sidebar__toggle"
+        data-bs-toggle="sidebar" ><i class="bi bi-list"></i></a>
+       <a class="header-brand1 d-flex d-md-none" href="#"> 
+        <img
+          src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img desktop-logo"
+          alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+          class="header-brand-img toggle-logo" alt="logo"> <img
+          src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img light-logo"
+          alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+          class="header-brand-img light-logo1" alt="logo"> </a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-md-none bg-white">
+<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+  <div class="d-flex order-lg-2 ms-auto">
+  
+  
+    <div class="dropdown d-md-flex profile-1">
+      <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+          <img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+            class="avatar  profile-user brround cover-image"> </span>
+      </a>
+      
+    </div>
+    <!-- SIDE-MENU -->
+  </div>
+</div>
+</div> <!-- /Mobile Header -->
+<!--app-content open-->
+<div class="app-content">
+<div class="side-app">
+
+  
+<div class="table-responsive">
+  <%if(deposit != ''){%>
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">S/N</th>
+        <th scope="col">Payment Method</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Status</th>
+        <!-- <th scope="col">Narration</th> -->
+        <th scope="col" class="text-end">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%  deposit.forEach((element, index) => {  %>
+        <tr class="align-middle">
+          <td> <h5><%= index %></h5> </td>
+          <td> <h5><%= element.payment_method %></h5> </td>
+          <td><h5><%= element.amount %></h5>  </td>
+          <td><h5><%= element.status %></h5> </td>
+          <!-- <td><img src="element.image%>" alt="Image" style="width: 50px; height: fit-content;" ></td> -->
+          <td><h5>  <%=element.narration %></h5>  </td>
+          <td class="text-end">
+            <div class="d-flex flex-row justify-content-end gap-2">
+              <a href="/viewDeposit/<%= element._id %> " type="button" class="btn btn-primary btn-small">
+                <i class="bi bi-eye"></i>
+              </a>
+              <a href="/editDeposit/<%= element._id %> " type="button" class="btn btn-warning btn-small">
+                <i class="bi bi-pencil"></i>
+              </a>
+              <form action="/deleteDeposit/<%=element._id%>?_method=DELETE" method="POST" class="position-relative">
+                <button type="submit" class="btn btn-danger btn-small">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+  <% }else{%>
+    <h1 class="text-center text-secondary mt-5">No deposits  found yet!</h1>
+    <% } %>
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div> 
+
+<%- include('partials/dashboardFooter')%>

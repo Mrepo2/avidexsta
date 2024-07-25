@@ -1,0 +1,451 @@
+<%- include('partials/dashboardHeader')%>
+
+
+<!doctype html><!-- saved from url=(0014)about:internet -->
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="https://app.avidexstandard.com/assets/images/brand/favicon.ico" /> <!-- TITLE -->
+    <title>Auto-Trade - Avidexstandard</title> <!-- BOOTSTRAP CSS -->
+    <link href="https://app.avidexstandard.com/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> <!-- STYLE CSS -->
+    <link href="https://app.avidexstandard.com/assets/css/style.css" rel="stylesheet" />
+    <link href="https://app.avidexstandard.com/assets/css/dark-style.css" rel="stylesheet" />
+    <link href="https://app.avidexstandard.com/assets/css/skin-modes.css" rel="stylesheet" /> <!-- SIDE-MENU CSS -->
+    <link href="https://app.avidexstandard.com/assets/css/sidemenu.css" rel="stylesheet" id="sidemenu-theme">
+    <!--C3 CHARTS CSS -->
+    <link href="https://app.avidexstandard.com/assets/plugins/charts-c3/c3-chart.css" rel="stylesheet" /> <!-- P-scroll bar css-->
+    <link href="https://app.avidexstandard.com/assets/plugins/p-scroll/perfect-scrollbar.css" rel="stylesheet" />
+    <!--- FONT-ICONS CSS -->
+    <link href="https://app.avidexstandard.com/assets/css/icons.css" rel="stylesheet" /> <!-- SIDEBAR CSS -->
+    <link href="https://app.avidexstandard.com/assets/plugins/sidebar/sidebar.css" rel="stylesheet"> <!-- SELECT2 CSS -->
+    <link href="https://app.avidexstandard.com/assets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!-- INTERNAL Data table css -->
+    <link href="https://app.avidexstandard.com/assets/plugins/datatable/css/dataTables.bootstrap5.css" rel="stylesheet" />
+    <link href="https://app.avidexstandard.com/assets/plugins/datatable/responsive.bootstrap5.css" rel="stylesheet" />
+    <!-- COLOR SKIN CSS -->
+    <link id="theme" rel="stylesheet" type="text/css" media="all" href="https://app.avidexstandard.com/assets/colors/color1.css" />
+    <!-- INTERNAL Switcher css -->
+    <link href="https://app.avidexstandard.com/assets/switcher/css/switcher.css" rel="stylesheet" />
+    <link href="https://app.avidexstandard.com/assets/switcher/demo.css" rel="stylesheet" />
+    <link href="https://app.avidexstandard.com/assets/font-awesome/font-awesome.css" rel="stylesheet" />
+    
+    <style>
+        .display-1, .display-2, .display-3, .display-4, .display-5, .display-6, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+                font-family: inherit !important;
+        }
+     </style>
+        <script type="text/javascript">
+        <!--
+        iv4v = document.all;
+        sqdl = iv4v && !document.getElementById;
+        umqv = iv4v && document.getElementById;
+        bgkk = !iv4v && document.getElementById;
+        nftp = document.layers;
+
+        function x2wt(ucaw) {
+            try {
+                if (sqdl) alert("");
+            } catch (e) {}
+            if (ucaw && ucaw.stopPropagation) ucaw.stopPropagation();
+            return false;
+        }
+
+        function rwds() {
+            if (event.button == 2 || event.button == 3) x2wt();
+        }
+
+        function k4nu(e) {
+            return (e.which == 3) ? x2wt() : true;
+        }
+
+        function e21n(db2m) {
+            for (ig36 = 0; ig36 < db2m.images.length; ig36++) {
+                db2m.images[ig36].onmousedown = k4nu;
+            }
+            for (ig36 = 0; ig36 < db2m.layers.length; ig36++) {
+                e21n(db2m.layers[ig36].document);
+            }
+        }
+
+        function c6rd() {
+            if (sqdl) {
+                for (ig36 = 0; ig36 < document.images.length; ig36++) {
+                    document.images[ig36].onmousedown = rwds;
+                }
+            } else if (nftp) {
+                e21n(document);
+            }
+        }
+
+        function fvtv(e) {
+            if ((umqv && event && event.srcElement && event.srcElement.tagName == "IMG") || (bgkk && e && e.target && e
+                    .target.tagName == "IMG")) {
+                return x2wt();
+            }
+        }
+        if (umqv || bgkk) {
+            document.oncontextmenu = fvtv;
+        } else if (sqdl || nftp) {
+            window.onload = c6rd;
+        }
+
+        function e48p(e) {
+            assd = e && e.srcElement && e.srcElement != null ? e.srcElement.tagName : "";
+            if (assd != "INPUT" && assd != "TEXTAREA" && assd != "BUTTON") {
+                return false;
+            }
+        }
+
+        function rgnp() {
+            return false
+        }
+        if (iv4v) {
+            document.onselectstart = e48p;
+            document.ondragstart = rgnp;
+        }
+        if (document.addEventListener) {
+            document.addEventListener('copy', function (e) {
+                assd = e.target.tagName;
+                if (assd != "INPUT" && assd != "TEXTAREA") {
+                    e.preventDefault();
+                }
+            }, false);
+            document.addEventListener('dragstart', function (e) {
+                e.preventDefault();
+            }, false);
+        }
+
+        function izxc(evt) {
+            if (evt.preventDefault) {
+                evt.preventDefault();
+            } else {
+                evt.keyCode = 37;
+                evt.returnValue = false;
+            }
+        }
+        var vg80 = 1;
+        var uzqg = 2;
+        var oovc = 4;
+        var xdmt = new Array();
+        xdmt.push(new Array(uzqg, 65));
+        xdmt.push(new Array(uzqg, 67));
+        xdmt.push(new Array(uzqg, 80));
+        xdmt.push(new Array(uzqg, 83));
+        xdmt.push(new Array(uzqg, 85));
+        xdmt.push(new Array(vg80 | uzqg, 73));
+        xdmt.push(new Array(vg80 | uzqg, 74));
+        xdmt.push(new Array(vg80, 121));
+        xdmt.push(new Array(0, 123));
+
+        function clma(evt) {
+            evt = (evt) ? evt : ((event) ? event : null);
+            if (evt) {
+                var vq6o = evt.keyCode;
+                if (!vq6o && evt.charCode) {
+                    vq6o = String.fromCharCode(evt.charCode).toUpperCase().charCodeAt(0);
+                }
+                for (var ylae = 0; ylae < xdmt.length; ylae++) {
+                    if ((evt.shiftKey == ((xdmt[ylae][0] & vg80) == vg80)) && ((evt.ctrlKey | evt.metaKey) == ((xdmt[
+                            ylae][0] & uzqg) == uzqg)) && (evt.altKey == ((xdmt[ylae][0] & oovc) == oovc)) && (vq6o ==
+                            xdmt[ylae][1] || xdmt[ylae][1] == 0)) {
+                        izxc(evt);
+                        break;
+                    }
+                }
+            }
+        }
+        if (document.addEventListener) {
+            document.addEventListener("keydown", clma, true);
+            document.addEventListener("keypress", clma, true);
+        } else if (document.attachEvent) {
+            document.attachEvent("onkeydown", clma);
+        }
+        -->
+    </script>
+    <meta http-equiv="imagetoolbar" content="no" />
+    <style type="text/css">
+        /* input,textarea{-webkit-touch-callout:default;-webkit-user-select:auto;-khtml-user-select:auto;-moz-user-select:text;-ms-user-select:text;user-select:text} *{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:-moz-none;-ms-user-select:none;user-select:none}  */
+    </style>
+    <style type="text/css" media="print">
+        /* body{display:none}  */
+    </style>
+
+</head>
+
+<body class="app sidebar-mini dark-mode">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    <!-- GLOBAL-LOADER -->
+    <div id="global-loader" style="display: none;"> <img src="/assets/images/loader.svg" class="loader-img"
+            alt="Loader">
+    </div>
+    <!-- /GLOBAL-LOADER -->
+    <!-- PAGE -->
+    <div class="page">
+        <div class="page-main">
+            <!--APP-SIDEBAR-->
+      <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+      <aside class="app-sidebar ps ps--active-y">
+        <div class="side-header active"> <a class="header-brand1" href="#">
+        </div>
+        <ul class="side-menu">
+            <li>
+                <h3>Main</h3>
+            </li>
+            <li>
+                <a class="side-menu__item active" data-bs-toggle="slide" href="/dashboard">
+                    <i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Home</span>
+                </a>
+            </li>
+                        <li>
+                <h3>Business</h3>
+            </li>
+                                    <li>
+                <a class="side-menu__item " href="/deposit">
+                    <i class="side-menu__icon bi bi-coin"></i><span class="side-menu__label">Deposit</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/withdrawal">
+                    <i class="side-menu__icon bi bi-cash"></i><span class="side-menu__label">Withdrawal</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/subscription">
+                    <i class="side-menu__icon bi bi-briefcase"></i><span class="side-menu__label">Subscription</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/connect-social-media">
+                    <i class="side-menu__icon bi bi-envelope"></i><span class="side-menu__label">Connect Social Media</span>
+                </a>
+            </li>             
+            <li>
+                <a class="side-menu__item " href="/connect-wallets">
+                    <i class="side-menu__icon bi bi-wallet"></i><span class="side-menu__label">Connect Wallets</span>
+                </a>
+            </li> 
+            
+          
+            <li>
+                <a class="side-menu__item " href="/buy-links">
+                    <i class="side-menu__icon bi bi-cart4"></i><span class="side-menu__label">Buy Coin</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/auto-trade">
+                    <i class="side-menu__icon bi bi-gear"></i><span class="side-menu__label">Auto Trade</span>
+                </a>
+            </li>
+            <li>
+                <a class="side-menu__item " href="/referral">
+                    <i class="side-menu__icon bi bi-people"></i><span class="side-menu__label">Referral</span>
+                </a>
+            </li>
+
+            
+		<li>
+			<a class="side-menu__item " href="/logout">
+				<i class="side-menu__icon bi bi-exclamation-circle"></i><span class="side-menu__label">sign out</span>
+			</a>
+		</li>
+                    </ul>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; height: 463px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 191px;"></div>
+        </div>
+      </aside>
+<!--/APP-SIDEBAR-->
+            <!-- Mobile Header -->
+            <div class="app-header header">
+                <div class="container-fluid">
+                    <div class="d-flex"> <a aria-label="Hide Sidebar" class="app-sidebar__toggle"
+                            data-bs-toggle="sidebar" href="#"><i class="bi bi-list"></i></a>
+                        <!-- sidebar-toggle--> <a class="header-brand1 d-flex d-md-none" href="#"> <img
+                                src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img desktop-logo"
+                                alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+                                class="header-brand-img toggle-logo" alt="logo"> <img
+                                src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img light-logo"
+                                alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+                                class="header-brand-img light-logo1" alt="logo"> </a>
+                        <!-- LOGO -->
+                        <div class="d-flex order-lg-2 ms-auto header-right-icon">
+                                                                                    <div class="dropdown d-none d-md-flex notifications"> <a class="nav-link icon"
+                                    data-bs-toggle="dropdown"><i class="bi bi-bell"></i>
+                                                                    </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+                                    <div class="drop-heading border-bottom">
+                                        <div class="d-flex">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="notifications-menu">
+                                                                                    <a class="dropdown-item d-flex" href="#chat">
+                                                <div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
+                                                </div>
+                                                <div class="mt-1">
+                                                    <h5 class="notification-label mb-1">No Notification</h5>
+                                                </div>
+                                            </a>
+                                                                            </div>
+                                    <div class="dropdown-divider m-0"></div>
+                                    <a href="/notification-messages" class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+                                </div>
+                            </div> <!-- NOTIFICATIONS -->
+                            <div class="dropdown  d-none d-md-flex message">
+                                <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+                                        <img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+                                            class="avatar  profile-user brround cover-image"> </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <div class="drop-heading">
+                                        <div class="text-center">
+                                            <h5 class="text-dark mb-0"><%=user.fullname%></h5>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider m-0"></div>
+                                    <a class="dropdown-item" href="/account"> <i
+                                            class="dropdown-icon  bi bi-person"></i> Profile </a>
+                                    <a class="dropdown-item logout-btn" href="/logout"> <i
+                                            class="dropdown-icon bi bi-exclamation-circle"></i> Sign out </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-md-none bg-white">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                <div class="d-flex order-lg-2 ms-auto">
+                    <div class="dropdown d-md-flex"> <a class="nav-link icon theme-layout nav-link-bg layout-setting">
+                            <span class="dark-layout" data-bs-placement="bottom" data-bs-toggle="tooltip" title=""
+                                data-bs-original-title="Dark Theme" aria-label="Dark Theme"><i
+                                    class="fe fe-moon"></i></span> <span class="light-layout" data-bs-placement="bottom"
+                                data-bs-toggle="tooltip" title="" data-bs-original-title="Light Theme"
+                                aria-label="Light Theme"><i class="fe fe-sun"></i></span> </a>
+                    </div> <!-- Theme-Layout -->
+                    <div class="dropdown  d-md-flex notifications"> <a class="nav-link icon"
+                            data-bs-toggle="dropdown"><i class="bi bi-bell"></i>
+                                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <div class="drop-heading border-bottom">
+                                <div class="d-flex"></div>
+                            </div>
+                            <div class="notifications-menu">
+                                                                    <a class="dropdown-item d-flex" href="#chat">
+                                        <div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
+                                        </div>
+                                        <div class="mt-1">
+                                            <h5 class="notification-label mb-1">No Notification</h5>
+                                        </div>
+                                    </a>
+                                                            </div>
+                            <div class="dropdown-divider m-0"></div>
+                            <a href="/notification-messages" class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+                        </div>
+                    </div> <!-- NOTIFICATIONS -->
+                    <div class="dropdown d-md-flex message"> <a class="nav-link icon text-center"
+                            data-bs-toggle="dropdown"> <i class="fe fe-message-square"></i><span
+                                class=" pulse-danger"></span> </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <div class="drop-heading border-bottom">
+                                <div class="d-flex">
+                                    <h6 class="mt-1 mb-0 fs-16 fw-semibold">You have Messages</h6>
+                                    <div class="ms-auto"> <span class="badge bg-danger rounded-pill">4</span> </div>
+                                </div>
+                            </div>
+                            <div class="message-menu"> <a class="dropdown-item d-flex" href="#chat"> <span
+                                        class="avatar avatar-md brround me-3 align-self-center cover-image"
+                                        data-bs-image-src="/assets/images/users/1.jpg"
+                                        style="background: url('/assets/images/users/1.jpg') center center;"></span>
+                                    <div class="wd-90p">
+                                        <div class="d-flex">
+                                            <h5 class="mb-1">Madeleine</h5> <small class="text-muted ms-auto text-end">
+                                                3 hours ago </small>
+                                        </div> <span>Hey! there I' am available....</span>
+                                    </div>
+                                </a> <a class="dropdown-item d-flex" href="#chat"> <span
+                                        class="avatar avatar-md brround me-3 align-self-center cover-image"
+                                        data-bs-image-src="/assets/images/users/12.jpg"
+                                        style="background: url('/assets/images/users/12.jpg') center center;"></span>
+                                    <div class="wd-90p">
+                                        <div class="d-flex">
+                                            <h5 class="mb-1">Anthony</h5> <small class="text-muted ms-auto text-end"> 5
+                                                hour ago </small>
+                                        </div> <span>New product Launching...</span>
+                                    </div>
+                                </a> <a class="dropdown-item d-flex" href="#chat"> <span
+                                        class="avatar avatar-md brround me-3 align-self-center cover-image"
+                                        data-bs-image-src="/assets/images/users/4.jpg"
+                                        style="background: url('/assets/images/users/4.jpg') center center;"></span>
+                                    <div class="wd-90p">
+                                        <div class="d-flex">
+                                            <h5 class="mb-1">Olivia</h5> <small class="text-muted ms-auto text-end"> 45
+                                                mintues ago </small>
+                                        </div> <span>New Schedule Realease......</span>
+                                    </div>
+                                </a> <a class="dropdown-item d-flex" href="#chat"> <span
+                                        class="avatar avatar-md brround me-3 align-self-center cover-image"
+                                        data-bs-image-src="/assets/images/users/15.jpg"
+                                        style="background: url('/assets/images/users/15.jpg') center center;"></span>
+                                    <div class="wd-90p">
+                                        <div class="d-flex">
+                                            <h5 class="mb-1">Sanderson</h5> <small class="text-muted ms-auto text-end">
+                                                2 days ago </small>
+                                        </div> <span>New Schedule Realease......</span>
+                                    </div>
+                                </a> </div>
+                            <div class="dropdown-divider m-0"></div> <a href="#"
+                                class="dropdown-item text-center p-3 text-muted">See all Messages</a>
+                        </div>
+                    </div> <!-- MESSAGE-BOX -->
+                    <div class="dropdown d-md-flex profile-1">
+                        <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+                                <img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+                                    class="avatar  profile-user brround cover-image"> </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <div class="drop-heading">
+                                <div class="text-center">
+                                    <h5 class="text-dark mb-0"><%=user.fullname%></h5> <small
+                                        class="text-muted"></small>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider m-0"></div>
+                            <a class="dropdown-item" href="/account"> <i
+                                    class="dropdown-icon fe fe-user"></i> Profile </a>
+                            <a class="dropdown-item logout-btn" href="/logout"> <i
+                                    class="dropdown-icon fe fe-alert-circle"></i> Sign out </a>
+                        </div>
+                    </div>
+                    <!-- SIDE-MENU -->
+                </div>
+            </div>
+        </div> <!-- /Mobile Header -->
+        <!--app-content open-->
+        <div class="app-content">
+    <div class="side-app">
+        <div class="row mt-3">
+                      <div class=" col-md-12 mx-auto">
+              <div class="callout callout-danger text-center">
+                  <h4 class=""><dfn>No Auto-Trade Plan Available</dfn></h4>
+              </div>
+            </div>
+                  </div>
+    </div>
+</div>
+        </div>
+    </div> <!-- Sidebar-right -->
+    <!--/Sidebar-right-->
+   
+
+
+
+
+<%- include('partials/dashboardFooter')%>

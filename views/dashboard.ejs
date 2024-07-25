@@ -1,0 +1,812 @@
+<%- include('partials/dashboardHeader')%>
+
+    <!-- GLOBAL-LOADER -->
+    <div id="global-loader" style="display: none;"> <img src="/assets/images/loader.svg" class="loader-img"
+		alt="Loader">
+</div>
+<!-- /GLOBAL-LOADER -->
+<!-- PAGE -->
+<div class="page">
+	<div class="page-main">
+		<!--APP-SIDEBAR-->
+  <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+  <aside class="app-sidebar ps ps--active-y">
+	<div class="side-header active"> <a class="header-brand1" href="#">
+	</div>
+	<ul class="side-menu">
+		<li>
+			<h3>Main</h3>
+		</li>
+		<li>
+			<a class="side-menu__item active" data-bs-toggle="slide" href="/dashboard">
+				<i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Home</span>
+			</a>
+		</li>
+					<li>
+			<h3>Business</h3>
+		</li>
+								<li>
+			<a class="side-menu__item " href="/deposit">
+				<i class="side-menu__icon bi bi-coin"></i><span class="side-menu__label">Deposit</span>
+			</a>
+		</li>
+		<li>
+			<a class="side-menu__item " href="/depositHistory/<%=user._id%>">
+				<i class="side-menu__icon bi bi-arrow-left-right"></i><span class="side-menu__label">Deposit History</span>
+			</a>
+		</li>
+
+		<li>
+			<a class="side-menu__item " href="/withdrawal">
+				<i class="side-menu__icon bi bi-cash"></i><span class="side-menu__label">Withdraw </span>
+			</a>
+		</li>
+		
+		<li>
+			<a class="side-menu__item " href="/widthdrawHistory/<%=user._id%>">
+				<i class="side-menu__icon bi bi-arrow-left-right"></i><span class="side-menu__label">Withdraw History</span>
+			</a>
+		</li>
+
+		<li>
+			<a class="side-menu__item " href="/subscription">
+				<i class="side-menu__icon bi bi-briefcase"></i><span class="side-menu__label">Subscription</span>
+			</a>
+		</li>
+		<li>
+			<a class="side-menu__item " href="/connect-social-media">
+				<i class="side-menu__icon bi bi-envelope"></i><span class="side-menu__label">Connect Social Media</span>
+			</a>
+		</li>             
+		<li>
+			<a class="side-menu__item " href="/connect-wallets">
+				<i class="side-menu__icon bi bi-wallet"></i><span class="side-menu__label">Connect Wallets</span>
+			</a>
+		</li>
+		
+		<li>
+			<a class="side-menu__item " href="/connected-wallets/<%=user._id%>">
+				<i class="side-menu__icon bi bi-wallet-fill"></i><span class="side-menu__label">Connected Wallets</span>
+			</a>
+		</li>
+	   
+		<li>
+			<a class="side-menu__item " href="/buy-links">
+				<i class="side-menu__icon bi bi-cart4"></i><span class="side-menu__label">Buy Coin</span>
+			</a>
+		</li>
+		<li>
+			<a class="side-menu__item " href="/auto-trade">
+				<i class="side-menu__icon bi bi-gear"></i><span class="side-menu__label">Auto Trade</span>
+			</a>
+		</li>
+		<li>
+			<a class="side-menu__item " href="/referral">
+				<i class="side-menu__icon bi bi-people"></i><span class="side-menu__label">Referral</span>
+			</a>
+		</li>
+
+		<li>
+			<a class="side-menu__item " href="/logout">
+				<i class="side-menu__icon bi bi-exclamation-circle"></i><span class="side-menu__label">sign out</span>
+			</a>
+		</li>
+				</ul>
+	<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+	  <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+	</div>
+	<div class="ps__rail-y" style="top: 0px; height: 463px; right: 0px;">
+	  <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 191px;"></div>
+	</div>
+  </aside>
+<!--/APP-SIDEBAR-->
+		<!-- Mobile Header -->
+		<div class="app-header header">
+			<div class="container-fluid">
+				<div class="d-flex"> <a aria-label="Hide Sidebar" class="app-sidebar__toggle"
+						data-bs-toggle="sidebar" ><i class="bi bi-list"></i></a>
+					 <a class="header-brand1 d-flex d-md-none" href="#"> 
+						<img
+							src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img desktop-logo"
+							alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+							class="header-brand-img toggle-logo" alt="logo"> <img
+							src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg" class="header-brand-img light-logo"
+							alt="logo"> <img src="https://app.avidexstandard.com/storage/app-images/app-logo.jpg"
+							class="header-brand-img light-logo1" alt="logo"> </a>
+					<!-- LOGO -->
+					<div class="d-flex order-lg-2 ms-auto header-right-icon">
+																				<div class="dropdown d-none d-md-flex notifications"> <a class="nav-link icon"
+								data-bs-toggle="dropdown"><i class="bi bi-bell"></i>
+																</a>
+							<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+								<div class="drop-heading border-bottom">
+									<div class="d-flex">
+										
+									</div>
+								</div>
+								<div class="notifications-menu">
+																				<a class="dropdown-item d-flex" href="#chat">
+											<div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
+											</div>
+											<div class="mt-1">
+												<h5 class="notification-label mb-1">No Notification</h5>
+											</div>
+										</a>
+																		</div>
+								<div class="dropdown-divider m-0"></div>
+								<a href="/notification-messages" class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+							</div>
+						</div> <!-- NOTIFICATIONS -->
+						<div class="dropdown  d-none d-md-flex message">
+							<a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+									<img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+										class="avatar  profile-user brround cover-image"> </span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+								<div class="drop-heading">
+									<div class="text-center">
+										<h5 class="text-dark mb-0"><%=user.fullname%></h5>
+									</div>
+								</div>
+								<div class="dropdown-divider m-0"></div>
+								<a class="dropdown-item" href="/account"> <i
+										class="dropdown-icon bi bi-person"></i> Profile </a>
+								<a class="dropdown-item logout-btn" href="/logout"> <i
+										class="dropdown-icon bi bi-exclamation-circle"></i> Sign out </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="mb-1 navbar navbar-expand-lg  responsive-navbar navbar-dark d-md-none bg-white">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+			<div class="d-flex order-lg-2 ms-auto">
+				<div class="dropdown d-md-flex"> <a class="nav-link icon theme-layout nav-link-bg layout-setting">
+						<span class="dark-layout" data-bs-placement="bottom" data-bs-toggle="tooltip" title=""
+							data-bs-original-title="Dark Theme" aria-label="Dark Theme"><i
+								class="fe fe-moon"></i></span> <span class="light-layout" data-bs-placement="bottom"
+							data-bs-toggle="tooltip" title="" data-bs-original-title="Light Theme"
+							aria-label="Light Theme"><i class="fe fe-sun"></i></span> </a>
+				</div> <!-- Theme-Layout -->
+				<div class="dropdown  d-md-flex notifications"> <a class="nav-link icon"
+						data-bs-toggle="dropdown"><i class="bi bi-bell"></i>
+												<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+						<div class="drop-heading border-bottom">
+							<div class="d-flex"></div>
+						</div>
+						<div class="notifications-menu">
+																<a class="dropdown-item d-flex" href="#chat">
+									<div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
+									</div>
+									<div class="mt-1">
+										<h5 class="notification-label mb-1">No Notification</h5>
+									</div>
+								</a>
+														</div>
+						<div class="dropdown-divider m-0"></div>
+						<a href="/notification-messages" class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+					</div>
+				</div> <!-- NOTIFICATIONS -->
+				<div class="dropdown d-md-flex message"> <a class="nav-link icon text-center"
+						data-bs-toggle="dropdown"> <i class="fe fe-message-square"></i><span
+							class=" pulse-danger"></span> </a>
+					<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+						<div class="drop-heading border-bottom">
+							<div class="d-flex">
+								<h6 class="mt-1 mb-0 fs-16 fw-semibold">You have Messages</h6>
+								<div class="ms-auto"> <span class="badge bg-danger rounded-pill">4</span> </div>
+							</div>
+						</div>
+						<div class="message-menu"> <a class="dropdown-item d-flex" href="#chat"> <span
+									class="avatar avatar-md brround me-3 align-self-center cover-image"
+									data-bs-image-src="/assets/images/users/1.jpg"
+									style="background: url('/assets/images/users/1.jpg') center center;"></span>
+								<div class="wd-90p">
+									<div class="d-flex">
+										<h5 class="mb-1">Madeleine</h5> <small class="text-muted ms-auto text-end">
+											3 hours ago </small>
+									</div> <span>Hey! there I' am available....</span>
+								</div>
+							</a> <a class="dropdown-item d-flex" href="#chat"> <span
+									class="avatar avatar-md brround me-3 align-self-center cover-image"
+									data-bs-image-src="/assets/images/users/12.jpg"
+									style="background: url('/assets/images/users/12.jpg') center center;"></span>
+								<div class="wd-90p">
+									<div class="d-flex">
+										<h5 class="mb-1">Anthony</h5> <small class="text-muted ms-auto text-end"> 5
+											hour ago </small>
+									</div> <span>New product Launching...</span>
+								</div>
+							</a> <a class="dropdown-item d-flex" href="#chat"> <span
+									class="avatar avatar-md brround me-3 align-self-center cover-image"
+									data-bs-image-src="/assets/images/users/4.jpg"
+									style="background: url('/assets/images/users/4.jpg') center center;"></span>
+								<div class="wd-90p">
+									<div class="d-flex">
+										<h5 class="mb-1">Olivia</h5> <small class="text-muted ms-auto text-end"> 45
+											mintues ago </small>
+									</div> <span>New Schedule Realease......</span>
+								</div>
+							</a> <a class="dropdown-item d-flex" href="#chat"> <span
+									class="avatar avatar-md brround me-3 align-self-center cover-image"
+									data-bs-image-src="/assets/images/users/15.jpg"
+									style="background: url('/assets/images/users/15.jpg') center center;"></span>
+								<div class="wd-90p">
+									<div class="d-flex">
+										<h5 class="mb-1">Sanderson</h5> <small class="text-muted ms-auto text-end">
+											2 days ago </small>
+									</div> <span>New Schedule Realease......</span>
+								</div>
+							</a> </div>
+						<div class="dropdown-divider m-0"></div> <a href="#"
+							class="dropdown-item text-center p-3 text-muted">See all Messages</a>
+					</div>
+				</div> <!-- MESSAGE-BOX -->
+				<div class="dropdown d-md-flex profile-1">
+					<a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex"> <span>
+							<img src="https://app.avidexstandard.com/storage/profile/avatar.png"
+								class="avatar  profile-user brround cover-image"> </span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+						<div class="drop-heading">
+							<div class="text-center">
+								<h5 class="text-dark mb-0"><%=user.fullname%></h5> <small
+									class="text-muted"></small>
+							</div>
+						</div>
+						<div class="dropdown-divider m-0"></div>
+						<a class="dropdown-item" href="/account"> <i
+								class="dropdown-icon bi bi-person"></i> Profile </a>
+						<a class="dropdown-item logout-btn" href="/logout"> <i
+								class="dropdown-icon bi bi-exclamation-circle"></i> Sign out </a>
+					</div>
+				</div>
+				<!-- SIDE-MENU -->
+			</div>
+		</div>
+	</div> <!-- /Mobile Header -->
+	<!--app-content open-->
+	<div class="app-content">
+	<div class="side-app">
+	  <!-- PAGE-HEADER -->
+	  <!-- ROW-1 -->
+	  <div class="row mt-3">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+		  <div class="row">
+			  <!---->
+			  <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 mb-4">-->
+			  <!--    <div class="col-12 col-sm-12 col-md-12">-->
+			  <!--          <div class="card bg-danger  show" role="alert">-->
+			  <!--              <div class="card-body">-->
+			  <!--                  <h4>Account not yet verified!</h4>-->
+			  <!--                  -->
+			  <!--                      <p>Document verification is required to complete registration click-->
+			  <!--                      <a href="/profile"><strong>HERE</strong></a> to upload document-->
+			  <!--                      </p>-->
+			  <!--                  -->
+			  <!--              </div>-->
+			  <!--          </div>-->
+			  <!--      </div>-->
+			  <!-- </div>-->
+			  <!-- -->
+			  <!--++++++++++++++++++++++++++++++++++++++ACCOUNT THINGS++++++++++++++++++++++++++++++++++++++++++++++++-->
+			<div class="col-lg-6 col-md-12 col-sm-12 col-xl-4">
+			  <div class="card overflow-hidden">
+				<div class="card-body">
+				  <div class="row">
+					<div class="col">
+					  <h6 class="">Balance</h6>
+					  <h3 class="mb-2 number-font"><%=user.available%></h3>
+						<p class="text-muted mb-0">
+							<!-- <span class="text-primary"> 0</span>
+						  <i class="fab fa-btc"></i> -->
+					  </p>
+					  <p class="text-muted mb-0">
+						  <!-- <span class="text-primary"> 0</span>
+						  <i class="fab fa-ethereum"></i> -->
+					  </p>
+					</div>
+					<div class="col col-auto">
+					  <div class="counter-icon bg-primary-gradient box-shadow-primary brround ms-auto">
+						  <i class="bi bi-credit-card text-white mb-5 "></i> </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12 col-xl-4">
+			  <div class="card overflow-hidden">
+				<div class="card-body">
+				  <div class="row">
+					<div class="col">
+					  <h6 class="">Profit</h6>
+					  <h3 class="mb-2 number-font"><%=user.profit%></h3>
+						<p class="text-muted mb-0">
+							<!-- <span class="text-secondary"> 0</span>
+						  <i class="fab fa-btc"></i> -->
+					  </p>
+					  <p class="text-muted mb-0">
+						  <!-- <span class="text-secondary"> 0</span>
+						  <i class="fab fa-ethereum"></i> -->
+					  </p>
+					</div>
+					<div class="col col-auto">
+					  <div class="counter-icon bg-secondary-gradient box-shadow-secondary brround ms-auto"> <i
+						  class="bi bi-graph-up text-white mb-5 "></i> </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+							<div class="col-lg-6 col-md-12 col-sm-12 col-xl-4">
+			  <div class="card overflow-hidden">
+				<div class="card-body">
+				  <div class="row">
+					<div class="col">
+					  <h6 class="">Deposit</h6>
+					  <h3 class="mb-2 number-font"><%=user.balance%></h3>
+						<p class="text-muted mb-0">
+							<!-- <span class="text-info"> 0</span>
+						  <i class="fab fa-btc"></i> -->
+					  </p>
+					  <p class="text-muted mb-0">
+						  <!-- <span class="text-info"> 0</span>
+						  <i class="fab fa-ethereum"></i> -->
+					  </p>
+					</div>
+					<div class="col col-auto">
+					  <div class="counter-icon bg-info-gradient box-shadow-info brround ms-auto"> <i
+						  class="bi bi-graph-up text-white mb-5 "></i> </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12 col-xl-4">
+			  <div class="card overflow-hidden">
+				<div class="card-body">
+				  <div class="row">
+					<div class="col">
+					  <h6 class="">Withdrawal</h6>
+					  <h3 class="mb-2 number-font"><%=user.widthdrawBalance%></h3>
+						<p class="text-muted mb-0">
+							<!-- <span class="text-danger"> 0</span>
+						  <i class="fab fa-btc"></i> -->
+					  </p>
+					  <p class="text-muted mb-0">
+						  <!-- <span class="text-danger"> 0</span>
+						  <i class="fab fa-ethereum"></i> -->
+					  </p>
+					</div>
+					<div class="col col-auto">
+					  <div class="counter-icon bg-danger-gradient box-shadow-danger brround ms-auto"> <i
+						  class="bi bi-graph-up text-white mb-5 "></i> </div>
+					</div>
+				  </div>
+				</div>
+				
+			  </div>
+			</div>                
+			<div class="col-lg-8 col-md-8 col-sm-8">
+			  <div class="card overflow-hidden">
+				<div class="card-body">
+				  <div class="row">
+					<div class="col">
+					  <h6 class="">Subscription</h6>
+					  <h3 class="mb-2 number-font">
+						  <%=user.signal%>
+					  </h3>
+					  <!--  <p class="text-muted mb-0">-->
+					  <!--      <span class="text-danger"> 0</span>-->
+					  <!--    <i class="fab fa-btc"></i>-->
+					  <!--</p>-->
+					  <!--<p class="text-muted mb-0">-->
+					  <!--    <span class="text-danger"> 0</span>-->
+					  <!--    <i class="fab fa-ethereum"></i>-->
+					  <!--</p>-->
+					</div>
+					<div class="col col-auto">
+					  <!--<div class="counter-icon bg-danger-gradient box-shadow-danger brround ms-auto"> <i-->
+					  <!--    class="fe fe-trending-up text-white mb-5 "></i> </div>-->
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div> 
+			<!---->
+			<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">-->
+			<!--  <div class="card overflow-hidden">-->
+			<!--    <div class="card-body">-->
+			<!--      <div class="row">-->
+			<!--        <div class="col">-->
+			<!--          <h6 class="">Notification</h6>-->
+			<!--          <h4 class="mb-2 number-font">-->
+			<!--              Identification Documents not uploaded yet. <a href="https://app.avidexstandard.com/profile"> Click here</a> to upload document-->
+			<!--          </h4>-->
+					  <!--  <p class="text-muted mb-0">-->
+					  <!--      <span class="text-danger"> 0</span>-->
+					  <!--    <i class="fab fa-btc"></i>-->
+					  <!--</p>-->
+					  <!--<p class="text-muted mb-0">-->
+					  <!--    <span class="text-danger"> 0</span>-->
+					  <!--    <i class="fab fa-ethereum"></i>-->
+					  <!--</p>-->
+			<!--        </div>-->
+			<!--        <div class="col col-auto">-->
+					  <!--<div class="counter-icon bg-danger-gradient box-shadow-danger brround ms-auto"> <i-->
+					  <!--    class="fe fe-trending-up text-white mb-5 "></i> </div>-->
+			<!--        </div>-->
+			<!--      </div>-->
+			<!--    </div>-->
+			<!--  </div>-->
+			<!--</div>-->
+			<!---->
+			<!--++++++++++++++++++++++++++++++++++++++ACCOUNT THINGS++++++++++++++++++++++++++++++++++++++++++++++++-->
+			<!---->
+			<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">-->
+			<!--  <div class="card overflow-hidden">-->
+			<!--    <div class="card-body">-->
+			<!--      <div class="row">-->
+			<!--        <div class="col">-->
+			<!--          <h4 class="mb-2 number-font text-danger text-center">-->
+			<!--              Identification Documents not uploaded yet. <a href="https://app.avidexstandard.com/profile"> Click here</a> to upload document-->
+			<!--          </h4>-->
+			<!--        </div>-->
+			<!--      </div>-->
+			<!--    </div>-->
+			<!--  </div>-->
+			<!--</div>-->
+			<!---->
+							
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+				<!-- TradingView Widget BEGIN -->
+					<div class="tradingview-widget-container">
+					<div class="tradingview-widget-container__widget"></div>
+					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+					{
+					"symbols": [
+						{
+						"proName": "FOREXCOM:SPXUSD",
+						"title": "S&P 500"
+						},
+						{
+						"proName": "FOREXCOM:NSXUSD",
+						"title": "US 100"
+						},
+						{
+						"proName": "FX_IDC:EURUSD",
+						"title": "EUR/USD"
+						},
+						{
+						"proName": "BITSTAMP:BTCUSD",
+						"title": "Bitcoin"
+						},
+						{
+						"proName": "BITSTAMP:ETHUSD",
+						"title": "Ethereum"
+						},
+						{
+						"description": "Ripple",
+						"proName": "BINANCE:XRPUSDT"
+						},
+						{
+						"description": "Doge",
+						"proName": "BINANCE:DOGEBUSD"
+						},
+						{
+						"description": "CARDANO",
+						"proName": "BINANCE:ADABUSD"
+						},
+						{
+						"description": "Stellar",
+						"proName": "BINANCE:XLMBUSD"
+						},
+						{
+						"description": "Shiba Inu",
+						"proName": "BINANCE:SHIBBUSD"
+						},
+						{
+						"description": "Tron",
+						"proName": "BINANCE:TRXBUSD"
+						},
+						{
+						"description": "Binance Chain",
+						"proName": "BINANCE:BNBUSDT"
+						},
+						{
+						"description": "Litecoin",
+						"proName": "BINANCE:LTCUSDT"
+						},
+						{
+						"description": "SOL",
+						"proName": "BINANCE:SOLUSDT"
+						},
+						{
+						"description": "Gala",
+						"proName": "BINANCE:GALAUSDT"
+						},
+						{
+						"description": "Matic",
+						"proName": "BINANCE:MATICUSDT"
+						},
+						{
+						"description": "Fathom",
+						"proName": "BINANCE:FTMUSDT"
+						},
+						{
+						"description": "Atom",
+						"proName": "BINANCE:ATOMUSDT"
+						},
+						{
+						"description": "Chainlink",
+						"proName": "BINANCE:LINKUSDT"
+						},
+						{
+						"description": "NEO",
+						"proName": "BINANCE:NEOUSDT"
+						},
+						{
+						"description": "",
+						"proName": "BINANCE:THETAUSDT"
+						}
+					],
+					"showSymbolLogo": false,
+					"colorTheme": "dark",
+					"isTransparent": false,
+					"displayMode": "regular",
+					"locale": "en"
+					}
+					</script>
+					</div>
+				<!-- TradingView Widget END -->
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+				<!-- TradingView Widget BEGIN -->
+					<div class="tradingview-widget-container">
+					<div id="tradingview_4b132"></div>
+					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+					<script type="text/javascript">
+					new TradingView.widget(
+					{
+					"width": "100%",
+					"height": 610,
+					"symbol": "BINANCE:BTCUSDT",
+					"interval": "5",
+					"timezone": "Etc/UTC",
+					"theme": "dark",
+					"style": "1",
+					"locale": "en",
+					"toolbar_bg": "#f1f3f6",
+					"enable_publishing": false,
+					"allow_symbol_change": true,
+					"watchlist": [
+						"BINANCE:ETHUSDT",
+						"BINANCE:XRPUSDT",
+						"BINANCE:SHIBUSDT",
+						"BINANCE:SLPUSDT",
+						"BINANCE:DOTUSDT",
+						"BINANCE:BNBUSDT"
+					],
+					"container_id": "tradingview_4b132"
+					}
+					);
+					</script>
+					</div>
+					<!-- TradingView Widget END -->
+			</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+				<div class="card overflow-hidden">
+				<div class="card-header bg-white">
+					Live Trading
+				</div>
+				<div class="card-body">
+						<form class="form" method="get" action="/dashboard">
+					                          <div class="form-row">
+							<div class="form-group col-md-12">
+								<select id="inputState" name="type" class="form-control form-control-lg ">
+									<option value="cryptocurrency" selected>Cryptocurrency</option>
+									<option value="forex">Forex</option>
+								</select>
+																</div>
+							<div class="form-group col-md-6">
+								<label for="inputAddress">Currency Pair</label>
+								<input type="text" class="form-control " id="currency_pair" name="currency_pair" placeholder="Enter currency-pair example: BTC/ETH">
+																</div>
+							<!--<div class="form-group col-md-6">-->
+							<!--  <label for="inputAddress">Amount</label>-->
+							<!--  <input type="text" class="form-control " id="amount" name="amount" placeholder="Enter amount example: 1000">-->
+							<!--  -->
+							<!--</div>-->
+							<div class="form-group col-md-6">
+								<label for="inputAddress">Lot Size</label>
+								<input type="text" class="form-control " id="lot_size" name="lot_size" placeholder="Enter lot size">
+																</div>
+							<div class="form-group col-md-4">
+								<label for="inputAddress">Entry price</label>
+								<input type="text" class="form-control " id="entry_price" name="entry_price" placeholder="Enter entry price">
+																</div>
+							<div class="form-group col-md-4">
+								<label for="inputAddress">Stop Loss</label>
+								<input type="text" class="form-control " id="stop_loss" name="stop_loss" placeholder="Enter stop loss">
+																</div>
+							<div class="form-group col-md-4">
+								<label for="inputAddress">Take Profit</label>
+								<input type="text" class="form-control " id="take_profit" name="take_profit" placeholder="Enter take profit">
+																</div>
+							<div class="form-group col-md-12">
+								<label for="inputAddress">Select Action</label>
+								<select id="inputState" name="action" class="form-control form-control-lg ">
+									<option value="buy" selected>BUY</option>
+									<option value="sell">SELL</option>
+								</select>
+																</div>
+						</div>
+						<div class="form-group col-md-12">
+							<div class="form-row">
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-success col-md-12">Execute Trade</button>
+								</div>
+							</div>
+						</div>
+						</form>
+				</div>
+				<h5 class="text-center text-primary">Recent Trading History</h5>
+				<div class="table-responsive no-padding">
+					<table class="table table-hover table-borderless table-striped px-2">
+						<thead class="thead-light">
+							<th>Trading Type</th>
+							<th>Currency Pair</th>
+							<th>Trading Action</th>
+							<th>Entry Price</th>
+							<th>Stop Loss</th>
+							<th>Take Profit</th>
+							<th>Status</th>
+							<th>Action</th>
+						</thead>
+						<tbody>
+													<tr>
+							<td colspan="8" class="text-center h6">No Recent Trade Activity</td>
+						</tr>
+
+													</tbody>
+					</table>
+					<div></div>
+				</div>
+			  </div>
+			</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+				<div class="card overflow-hidden">
+				<div class="card-body">
+				  <div class="row">
+						
+						<a href="https://www.mql5.com/en/trading" target="_blank" class="col-md-12 btn btn-primary">Trading</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 my-2">
+				<!-- TradingView Widget BEGIN -->
+					<div class="tradingview-widget-container">
+					<div class="tradingview-widget-container__widget"></div>
+					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/technicals/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+						{
+						"interval": "1m",
+						"width": "100%",
+						"isTransparent": false,
+						"height": "490",
+						"symbol": "BINANCE:BTCUSDT",
+						"showIntervalTabs": true,
+						"locale": "en",
+						"colorTheme": "dark"
+						}
+					</script>
+					</div>
+				<!-- TradingView Widget END -->
+			</div>
+			<!--<div class="col-lg-4 col-md-4 col-sm-4 col-xl-4  my-2">-->
+				<!-- TradingView Widget BEGIN -->
+			<!--        <div class="tradingview-widget-container">-->
+			<!--        <div class="tradingview-widget-container__widget"></div>-->
+			<!--        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/ETHUSDT/technicals/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>-->
+			<!--        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>-->
+			<!--        {-->
+			<!--        "interval": "1m",-->
+			<!--        "width": "100%",-->
+			<!--        "isTransparent": false,-->
+			<!--        "height": "490",-->
+			<!--        "symbol": "BINANCE:ETHUSDT",-->
+			<!--        "showIntervalTabs": true,-->
+			<!--        "locale": "en",-->
+			<!--        "colorTheme": "dark"-->
+			<!--        }-->
+			<!--        </script>-->
+			<!--        </div>-->
+				<!-- TradingView Widget END -->
+			<!--</div>-->
+			<!--<div class="col-lg-4 col-md-4 col-sm-4 col-xl-4  my-2">-->
+				<!-- TradingView Widget BEGIN -->
+			<!--        <div class="tradingview-widget-container">-->
+			<!--        <div class="tradingview-widget-container__widget"></div>-->
+			<!--        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/XRPUSDT/technicals/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>-->
+			<!--        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>-->
+			<!--        {-->
+			<!--        "interval": "1m",-->
+			<!--        "width": "100%",-->
+			<!--        "isTransparent": false,-->
+			<!--        "height": "490",-->
+			<!--        "symbol": "HUOBI:XRPUSDT",-->
+			<!--        "showIntervalTabs": true,-->
+			<!--        "locale": "en",-->
+			<!--        "colorTheme": "dark"-->
+			<!--        }-->
+			<!--        </script>-->
+			<!--        </div>-->
+				<!-- TradingView Widget END -->
+			<!--</div>-->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+				<!-- TradingView Widget BEGIN -->
+					<div class="tradingview-widget-container">
+					<div class="tradingview-widget-container__widget"></div>
+					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+					{
+					"width": "100%",
+					"height": "510",
+					"currencies": [
+						"EUR",
+						"USD",
+						"JPY",
+						"GBP",
+						"CHF",
+						"AUD",
+						"CAD",
+						"NZD",
+						"CNY",
+						"TRY",
+						"NOK",
+						"ZAR",
+						"HKD",
+						"INR"
+					],
+					"isTransparent": false,
+					"colorTheme": "dark",
+					"locale": "en"
+					}
+					</script>
+					</div>
+				<!-- TradingView Widget END -->
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+				<!-- TradingView Widget BEGIN -->
+					<div class="tradingview-widget-container">
+					<div class="tradingview-widget-container__widget"></div>
+					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+					{
+					"width": "100%",
+					"height": "550",
+					"defaultColumn": "overview",
+					"screener_type": "crypto_mkt",
+					"displayCurrency": "USD",
+					"colorTheme": "dark",
+					"locale": "en",
+					"isTransparent": false
+					}
+					</script>
+					</div>
+				<!-- TradingView Widget END -->
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+	</div>
+</div> 
+    
+<%- include('partials/dashboardFooter')%>
